@@ -1,0 +1,59 @@
+{
+	"name": "@cedalo/management-center-frontend",
+	"version": "2.3.13",
+	"private": true,
+	"author": "Cedalo AG",
+	"homepage": ".",
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"build-without-base-path": "rm -rf ../backend/public && cross-env PUBLIC_URL=/ react-scripts build && mv build ../backend/public",
+		"build-with-base-path": "cross-env PUBLIC_URL=/mosquitto-management-center react-scripts build && mv build ../backend/public",
+		"test": "react-scripts test",
+		"test-client": "npx jest tests/client.test.js --detectOpenHandles",
+		"eject": "react-scripts eject",
+		"import-sort": "npx import-sort-cli --write src/**/*.js"
+	},
+	"dependencies": {
+		"ajv": "^7.1.1",
+		"brace": "^0.11.1",
+		"express": "^4.17.1",
+		"jsoneditor": "^9.1.10",
+		"jsoneditor-react": "^3.1.0",
+		"notistack": "^1.0.1",
+		"sweetalert2": "^10.10.1",
+		"sweetalert2-react-content": "^3.2.1"
+	},
+	"devDependencies": {
+		"@material-ui/core": "latest",
+		"@material-ui/icons": "^4.9.1",
+		"@material-ui/lab": "^4.0.0-alpha.56",
+		"chart.js": "^2.9.3",
+		"clsx": "latest",
+		"cross-env": "^7.0.3",
+		"jest": "24",
+		"material-ui-confirm": "^2.1.1",
+		"react": "latest",
+		"react-chartjs-2": "^2.10.0",
+		"react-dom": "latest",
+		"react-joyride": "^2.2.1",
+		"react-redux": "^7.2.1",
+		"react-router-dom": "^5.2.0",
+		"react-scripts": "latest",
+		"react-select": "^3.1.0",
+		"redux": "^4.0.5",
+		"terminal-in-react": "^4.3.1"
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	}
+}

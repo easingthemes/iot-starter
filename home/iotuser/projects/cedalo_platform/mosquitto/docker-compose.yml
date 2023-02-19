@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+  mosquitto:
+    container_name: mosquitto-starter
+    image: eclipse-mosquitto:latest
+    ports:
+      - 1883:1883
+      - 9002:9001
+    expose:
+      - 1883
+      - 9002
+    volumes:
+      - ./config:/mosquitto/config
+      - ./data:/mosquitto/data
+

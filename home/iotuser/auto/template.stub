@@ -1,0 +1,19 @@
+upstream "{{SUB_DOMAIN}}" {
+    server {{IP}}:{{PORT}};
+}
+
+server {
+	server_name {{DOMAIN}};
+
+    location / {
+        proxy_pass http://0.0.0.0:{{PORT}}/; # make sure to add trailing slash here!
+    }
+
+    error_page  404              /404.html;
+    # redirect server error pages to the static page /50x.html
+    #
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   {{PUBLIC_FOLDER}}/error-pages;
+    }
+}

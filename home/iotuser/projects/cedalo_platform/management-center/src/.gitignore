@@ -1,3 +1,7 @@
+.DS_Store
+
+public-with-basepath
+
 # Logs
 logs
 *.log
@@ -22,6 +26,15 @@ lib-cov
 coverage
 *.lcov
 
+# nyc test coverage
+.nyc_output
+
+# Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+# Bower dependency directory (https://bower.io/)
+bower_components
+
 # node-waf configuration
 .lock-wscript
 
@@ -44,6 +57,12 @@ typings/
 # Optional eslint cache
 .eslintcache
 
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
 # Optional REPL history
 .node_repl_history
 
@@ -60,19 +79,31 @@ typings/
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 
-# build / generate output
+# Next.js build output
+.next
+
+# Nuxt.js build / generate output
+.nuxt
 dist
 
 # Gatsby files
 .cache/
+# Comment in the public line in if your project uses Gatsby and *not* Next.js
+# https://nextjs.org/blog/next-9-1#public-directory-support
+public
+
+# vuepress build output
+.vuepress/dist
 
 # Serverless directories
 .serverless/
 
-# Project files
-.idea
-etc
-home/iotuser/projects/cedalo_platform/mosquitto/data/
-home/iotuser/projects/cedalo_platform/management-center/config/
+# FuseBox cache
+.fusebox/
 
+# DynamoDB Local files
+.dynamodb/
 
+# TernJS port file
+.tern-port
+releases
