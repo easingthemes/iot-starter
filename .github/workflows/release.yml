@@ -1,0 +1,40 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    name: Test, Build and Deploy
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ ubuntu-latest ]
+        node-version: [ 16.x ]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix['node-version'] }}
+      - name: Install All and Build
+        run: |
+          bash ./home/iotuser/startup/base.sh
+          bash ./home/iotuser/startup/cedalo.sh install
+        env:
+          BU_USER: ${{ secrets.BU_USER }}
+          BU_PASS: ${{ secrets.BU_PASS }}
+          MU_USER: ${{ secrets.MU_USER }}
+          MU_PASS: ${{ secrets.MU_PASS }}
+      - name: Deploy
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ env.REMOTE_USER }}
+          SOURCE: home/${{ env.REMOTE_USER }}/projects/cedalo_platform/management-center/src/backend/public
+          TARGET: /home/${{ env.REMOTE_USER }}/projects/cedalo_platform/management-center/src/backend/public
