@@ -74,5 +74,4 @@ dist
 etc
 home/iotuser/projects/cedalo_platform/mosquitto/data/
 home/iotuser/projects/cedalo_platform/management-center/config/
-
-
+/home/iotuser/projects/cedalo_platform/management-center/src/backend/public/
