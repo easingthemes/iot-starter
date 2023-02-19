@@ -1,4 +1,5 @@
-echo "Run ${1}-mqtt in ${0}"
+CURRENT_DIR=$(dirname "$0")
+echo "Run ${1}-mqtt with ${0}, CURRENT_DIR: $CURRENT_DIR"
 
 if [ "$1" == "start" ]
 then
@@ -16,7 +17,7 @@ then
 elif [ "$1" == "build" ]
 then
   echo "Run ${1} mqtt"
-  sudo make -C /home/iotuser/projects/ -w "$1"-mqtt
+  sudo make -C "$CURRENT_DIR"/../projects/ -w "$1"-mqtt
 elif [ "$1" == "install" ]
 then
   echo "Run ${1} mqtt"
