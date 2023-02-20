@@ -31,9 +31,7 @@ jobs:
           sudo rm -f /usr/local/bin/npm
           sudo ln -s $(which node) /usr/local/bin/
           sudo ln -s $(which npm) /usr/local/bin/
-          node -v
           nvm alias default 16
-          node -v
           nvm alias system 16
           nvm use system
           node -v
@@ -52,6 +50,6 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-          REMOTE_USER: ${{ env.REMOTE_USER }}
-          SOURCE: home/${{ env.REMOTE_USER }}/projects/cedalo_platform/management-center/src/backend/public
-          TARGET: /home/${{ env.REMOTE_USER }}/projects/cedalo_platform/management-center/src/backend/public
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          SOURCE: home/${{ secrets.REMOTE_USER }}/projects/cedalo_platform/management-center/src/backend/public
+          TARGET: /home/${{ secrets.REMOTE_USER }}/projects/cedalo_platform/management-center/src/backend/public
