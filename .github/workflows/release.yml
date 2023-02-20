@@ -20,7 +20,6 @@ jobs:
       - name: Setup Node.js with nvm
         run: |
           node -v
-          command -v nvm
           nvm install 16
           nvm alias system 16
           nvm use system
