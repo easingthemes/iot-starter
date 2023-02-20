@@ -51,5 +51,5 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          SOURCE: home/${{ secrets.REMOTE_USER }}/projects/cedalo_platform/management-center/src/backend/public
+          SOURCE: home/iotuser/projects/cedalo_platform/management-center/src/backend/public
           TARGET: /home/${{ secrets.REMOTE_USER }}/projects/cedalo_platform/management-center/src/backend/public
