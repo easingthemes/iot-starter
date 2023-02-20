@@ -4,6 +4,6 @@ const path = `${(process.env.PUBLIC_URL && process.env.PUBLIC_URL !== '.') ? pro
 
 export default {
 	// url: `${wsProtocol}//${window.location.hostname}${window.location.port ? ':' + window.location.port : ''}${process.env.PUBLIC_URL ? process.env.PUBLIC_URL : ''}`
-	url: `${wsProtocol}//${window.location.host}${path}`,
+	url: `${wsProtocol}//${window.location.host}${path}/socket`,
 	urlHTTP: `${protocol}//${window.location.host}${path}`,
 };
