@@ -6,6 +6,11 @@ echo "PWD: $PWD, DIR: $SCRIPT_DIR"
 echo "Add .env"
 . "$SCRIPT_DIR/../.env"
 cd "$SCRIPT_DIR" || exit
+echo "Node and NPM: $(which node)"
+node -v
+npm -v
+nvm -v
+nvm ls
 if [ "force" == "${1}" ]; then
   bash ./install.sh
 fi

@@ -1,4 +1,7 @@
 # Install software
+echo "Node: $(which node)"
+node -v
+npm -v
 npm install yarn -g
 # Create .env file
 SED=$(which sed)
