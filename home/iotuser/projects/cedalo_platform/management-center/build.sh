@@ -9,8 +9,7 @@ cd "$SCRIPT_DIR" || exit
 echo "Node and NPM: $(which node)"
 node -v
 npm -v
-nvm -v
-nvm ls
+
 if [ "force" == "${1}" ]; then
   bash ./install.sh
 fi

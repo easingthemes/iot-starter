@@ -18,11 +18,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix['node-version'] }}
+        run: |
+          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+          command -v nvm
+          nvm install 16
+          node -v
       - name: Install All and Build
         run: |
+          node -v
           bash ./home/iotuser/startup/base.sh
           bash ./home/iotuser/startup/cedalo.sh install
         env:
