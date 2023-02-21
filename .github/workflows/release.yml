@@ -39,7 +39,7 @@ jobs:
         run: |
           node -v
           bash ./home/iotuser/startup/base.sh
-          bash ./home/iotuser/startup/cedalo.sh install
+          bash ./home/iotuser/startup/cedalo.sh
         env:
           BU_USER: ${{ secrets.BU_USER }}
           BU_PASS: ${{ secrets.BU_PASS }}
