@@ -35,11 +35,10 @@ jobs:
           nvm alias system 16
           nvm use system
           node -v
-      - name: Install All and Build
-        run: |
-          node -v
-          bash ./home/iotuser/startup/base.sh
-          bash ./home/iotuser/startup/cedalo.sh
+      - name: Install All
+        run: bash ./home/iotuser/startup/base.sh
+      - name: Build All
+        run: bash ./home/iotuser/startup/cedalo.sh
         env:
           BU_USER: ${{ secrets.BU_USER }}
           BU_PASS: ${{ secrets.BU_PASS }}
