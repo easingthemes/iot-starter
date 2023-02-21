@@ -19,6 +19,7 @@ if [ "skipnpm" != "${1}" ]; then
   cd ./src || exit
   echo "Yarn install"
   yarn install --network-timeout 100000
+  chown -R 1001:1001 "$SCRIPT_DIR"/src/frontend/node_modules/.cache && echo "pwn dat cache"
 else
   cd ./src || exit
 fi
