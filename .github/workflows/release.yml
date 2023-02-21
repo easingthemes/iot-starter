@@ -52,5 +52,5 @@ jobs:
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           SOURCE: home/iotuser/projects/cedalo_platform/management-center/src
-          TARGET: /home/${{ secrets.REMOTE_USER }}/cedalo/cedalo_platform/management-center/src
+          TARGET: /home/${{ secrets.REMOTE_USER }}/cedalo/cedalo_platform/management-center
           SCRIPT_AFTER: 'sudo systemctl stop cedalo.service && sudo systemctl start cedalo.service'
