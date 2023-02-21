@@ -38,7 +38,7 @@ jobs:
       - name: Install All
         run: bash ./home/iotuser/startup/base.sh
       - name: Build All
-        run: bash ./home/iotuser/startup/cedalo.sh
+        run: bash ./home/iotuser/startup/cedalo.sh build
         env:
           BU_USER: ${{ secrets.BU_USER }}
           BU_PASS: ${{ secrets.BU_PASS }}
